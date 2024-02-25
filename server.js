@@ -45,7 +45,7 @@ app.get('/auth/discord/callback', (req, res) => {
       const user = userResponse.data;
 
       // Redirect to Google Form with pre-filled information
-      const formUrl = `https://docs.google.com/forms/d/e/1FAIpQLSc__-h7E5Ko35SjmCxRTX9Gwf9t5CpRLnqUuiLDNuxwYqHvIg/viewform?usp=pp_url&entry.1737640633=${encodeURIComponent(user.username)}&entry.848730717=${encodeURIComponent(user.id)}`;
+      const formUrl = `https://docs.google.com/forms/d/e/1FAIpQLSccsjBpqCPhvZFCInDvk8qkr1aic1zaDQTjCIGxYMEBGeUvrA/viewform?usp=pp_url&entry.538830894=${encodeURIComponent(user.username)}&entry.266729264=${encodeURIComponent(user.id)}`;
       res.redirect(formUrl);
     }).catch(error => {
       console.error(error);
@@ -61,3 +61,4 @@ const serverPort = process.env.PORT || 3100
 app.listen(serverPort, () => {
   console.log(`🚀 Server is listening on port: ${serverPort}`)
 })
+
