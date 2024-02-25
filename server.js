@@ -21,7 +21,7 @@ app.get('/auth/discord/callback', (req, res) => {
     client_secret: process.env.DISCORD_CLIENT_SECRET,
     grant_type: 'authorization_code',
     code: code,
-    redirect_uri: 'http://discordoauthserver-production.up.railway.app/auth/discord/callback',
+    redirect_uri: 'https://discordoauthserver-production.up.railway.app/auth/discord/callback',
     scope: 'identify'
   };
 
@@ -57,4 +57,4 @@ app.get('/auth/discord/callback', (req, res) => {
   });
 });
 
-app.listen(3000, () => console.log('Server running on http://discordoauthserver-production.up.railway.app'));
+app.listen(3000, () => console.log('Server running on https://discordoauthserver-production.up.railway.app'));
