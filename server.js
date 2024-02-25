@@ -7,7 +7,7 @@ dotenv.config();
 const app = express();
 
 app.get('/auth/discord', (req, res) => {
-  const redirectUri = encodeURIComponent('http://discordoauthserver-production.up.railway.app/auth/discord/callback');
+  const redirectUri = encodeURIComponent('https://discordoauthserver-production.up.railway.app/auth/discord/callback');
   res.redirect(`https://discord.com/api/oauth2/authorize?client_id=1209870662475190303&redirect_uri=${redirectUri}&response_type=code&scope=identify`);
 });
 
