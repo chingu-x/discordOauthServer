@@ -7,7 +7,7 @@ dotenv.config();
 const app = express();
 
 app.get('/auth/discord', (req, res) => {
-  const redirectUri = encodeURIComponent('http://localhost:3000/auth/discord/callback');
+  const redirectUri = encodeURIComponent('http://discordoauthserver-production.up.railway.app/auth/discord/callback');
   res.redirect(`https://discord.com/api/oauth2/authorize?client_id=1209870662475190303&redirect_uri=${redirectUri}&response_type=code&scope=identify`);
 });
 
@@ -21,7 +21,7 @@ app.get('/auth/discord/callback', (req, res) => {
     client_secret: process.env.DISCORD_CLIENT_SECRET,
     grant_type: 'authorization_code',
     code: code,
-    redirect_uri: 'http://localhost:3000/auth/discord/callback',
+    redirect_uri: 'http://discordoauthserver-production.up.railway.app/auth/discord/callback',
     scope: 'identify'
   };
 
@@ -57,4 +57,4 @@ app.get('/auth/discord/callback', (req, res) => {
   });
 });
 
-app.listen(3000, () => console.log('Server running on http://localhost:3000'));
+app.listen(3000, () => console.log('Server running on http://discordoauthserver-production.up.railway.app'));
