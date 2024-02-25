@@ -57,4 +57,7 @@ app.get('/auth/discord/callback', (req, res) => {
   });
 });
 
-app.listen(3000, () => console.log('Server running on https://discordoauthserver-production.up.railway.app'));
+const serverPort = process.env.PORT || 3100
+app.listen(serverPort, () => {
+  console.log(`🚀 Server is listening on port: ${serverPort}`)
+})
